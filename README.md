@@ -10,12 +10,12 @@ ProxyTcp: simulate exchange and permits to simulate exchange disconnections.
 
 
 
-###__SYNOPSIS__
+### __SYNOPSIS__
 ./ProxyTcp -PortToBind <PortToBind> -ExchangeIp <ExchangeIp> -ExchangePort <ExchangePort> { OPTIONS }
 
 
 
-###__MANDATORY PARAMETERS__
+### __MANDATORY PARAMETERS__
 PortToBind: the port that the feedhandler should connect to (instead
             of the exchange's port).
 
@@ -25,7 +25,7 @@ ExchangePort: (not mandatory in trunk mode) port of the stock exchange server.
 
 
 
-###__OPTIONS__
+### __OPTIONS__
 
 -h | --help :  display the options and explanations
 
@@ -73,7 +73,7 @@ ExchangePort: (not mandatory in trunk mode) port of the stock exchange server.
 							 client connection and do the replay again with this new client without
 							 having to restart the tool	
 							 
-###__NORMAL MODE__
+### __NORMAL MODE__
 In normal mode, the proxy will forward connections requests incoming from
 the 'PortToBind' port to the couple <ExchangeIp, ExchangePort>
 Then after connection establishment, all data will be forwarded from and
@@ -88,7 +88,7 @@ to the sock exchange and the feedhandler.
 
 
 
-###__PROXY MODE WITH RECORD__
+### __PROXY MODE WITH RECORD__
 In Record mode, all data exchanged between Feedhandler and exchanger
 server are recorded to a replay file.
 Notice that the login protocol does not need to be known in advance
@@ -103,7 +103,7 @@ by the proxy that will learn the protocol whatever it is.
 
 
 
-###__TRUNK MODE___
+### __TRUNK MODE___
 In trunk mode, the proxy will emulate an "echo stock exchange" so that
 all received data will be sent back toward the initial sender, which 
 permits to test in standalone using 2 instances of ProxyTcp as follows:
@@ -117,7 +117,7 @@ permits to test in standalone using 2 instances of ProxyTcp as follows:
 
 
 
-###__TRUNK MODE WITH REPLAY__
+### __TRUNK MODE WITH REPLAY__
 In trunk replay mode, the previously recorded file is replayed
 including all the login protocol that is emulated.
 
@@ -129,22 +129,22 @@ including all the login protocol that is emulated.
 ---------------    ------------------         -----------
 
 
-###__How to compile__
-	####__Windows compilation__
+### __How to compile__
+	#### __Windows compilation__
 	You will need Visual studio (at least 2017)
 	
-	####__Linux compilation__
+	#### __Linux compilation__
 	You must define the following preprocessor parameter: _LINUX
 	g++ ProxyTcpReplay.cpp -D_LINUX -o ProxyTcpReplay.exe
 
-###__FAQ__
-	####HOW TO SIMULATE DISCONNECTIONS ?__
+### __FAQ__
+	#### __HOW TO SIMULATE DISCONNECTIONS ?__
 	--------------------------------
 	you can use ctrl-C to break the connection between FH <-> PROXY and
 	PROXY <-> EXCHANGE.
 
 
-	####__HOW TO STOP THE PROXY ?__
+	#### __HOW TO STOP THE PROXY ?__
 	-----------------------
 	press ctrl-C more than 3 times within a time frame of 1 second.
 
