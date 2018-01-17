@@ -129,23 +129,20 @@ including all the login protocol that is emulated.
 ---------------    ------------------         -----------
 
 
-### __How to compile__
-	#### __Windows compilation__
-	You will need Visual studio (at least 2017)
+### __windows compilation__
+You will need Visual studio (at least 2017)
 	
-	#### __Linux compilation__
+#### __Linux compilation__
 	You must define the following preprocessor parameter: _LINUX
 	g++ ProxyTcpReplay.cpp -D_LINUX -o ProxyTcpReplay.exe
 
 ### __FAQ__
-	#### __HOW TO SIMULATE DISCONNECTIONS ?__
-	--------------------------------
+#### __HOW TO SIMULATE DISCONNECTIONS ?__
 	you can use ctrl-C to break the connection between FH <-> PROXY and
 	PROXY <-> EXCHANGE.
 
 
-	#### __HOW TO STOP THE PROXY ?__
-	-----------------------
+#### __HOW TO STOP THE PROXY ?__
 	press ctrl-C more than 3 times within a time frame of 1 second.
 
 
